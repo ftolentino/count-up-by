@@ -8,6 +8,15 @@
 // test2
 //                   5         1
 function countUpBy(countTo, countBy) {
+  // does this belong in business logic or UI logic?
+  // Winnie: it's an UI
+  // Filmer: it's a mix -> maybe not
+  // Seung: IDK
+  // what if it gets used somewhere else?
+  if (Number(countBy) === 0) {
+    return "Can't use 0 as count by";
+  }
+
   if (!parseInt(countTo) || !parseInt(countBy)) {
     return 'This is not a number. Please enter a number.';
   }
@@ -20,17 +29,8 @@ function countUpBy(countTo, countBy) {
     return 'Please keep both numbers same positive or same negative';
   }
 
-  if (countBy > countTo) {
+  if (countBy > countTo && countBy > 0 && countTo > 0) {
     return 'Unable to count multiples backwards';
-  }
-
-  // does this belong in business logic or UI logic?
-  // Winnie: it's an UI
-  // Filmer: it's a mix -> maybe not
-  // Seung: IDK
-  // what if it gets used somewhere else?
-  if (countBy === 0) {
-    return "Can't use 0 as count by";
   }
 
   // if (countBy >= countTo) {
