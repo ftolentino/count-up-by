@@ -16,6 +16,14 @@ function countUpBy(countTo, countBy) {
   countTo = parseInt(countTo);
   countBy = parseInt(countBy);
 
+  if ((countTo > 0 && countBy < 0) || (countTo < 0 && countBy > 0)) {
+    return 'Please keep both numbers same positive or same negative';
+  }
+
+  if (countBy > countTo) {
+    return 'Unable to count multiples backwards';
+  }
+
   // does this belong in business logic or UI logic?
   // Winnie: it's an UI
   // Filmer: it's a mix -> maybe not
@@ -25,8 +33,6 @@ function countUpBy(countTo, countBy) {
     return "Can't use 0 as count by";
   }
 
-  let incrementBy;
-
   // if (countBy >= countTo) {
   //   incrementBy = countBy;
   // } else if (countBy <= countTo) {
@@ -34,13 +40,13 @@ function countUpBy(countTo, countBy) {
   // }
 
   if (countBy < 0 && countTo < 0) {
-    incrementBy = countBy;
+    let incrementBy = countBy;
     for (let i = 0; countBy >= countTo; countBy += incrementBy) {
       console.log(result);
       result.push(countBy);
     }
   } else {
-    incrementBy = Math.abs(countBy);
+    let incrementBy = Math.abs(countBy);
     for (let i = 0; countBy <= countTo; countBy += incrementBy) {
       console.log(result);
       result.push(countBy);

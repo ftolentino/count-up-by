@@ -63,6 +63,20 @@ const countBy = -1;
 countUpBy(countTo, countBy);
 Expected Output: -1, -2, -3, -4, -5;
 
+Test10: It should say "Please keep both numbers same positive or same negative" if countTo and countBy are different +-.
+Code:
+const countTo = -5;
+const countBy = 1;
+countUpBy(countTo, countBy);
+Expected Output: "Please keep both numbers same positive or same negative";
+
+Test11: It should say 'Unable to count multiples backwards' if Count by number is larger than the count to numbers.
+Code:
+const countTo = 2;
+const countBy = 5;
+countUpBy(countTo, countBy);
+Expected Output: 'Unable to count multiples backwards';
+
 # Count Up By
 
 #### By Seung Lee, Winnie Wang, Filmer Tolentino
